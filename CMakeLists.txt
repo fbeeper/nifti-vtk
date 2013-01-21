@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 2.8)
+ 
+project(nifti-vtk)
+ 
+FIND_PACKAGE(ITK REQUIRED)
+INCLUDE(${ITK_USE_FILE})
+IF (ITKVtkGlue_LOADED)
+  FIND_PACKAGE(VTK REQUIRED)
+  INCLUDE(${VTK_USE_FILE})
+ELSE()
+  FIND_PACKAGE(ItkVtkGlue REQUIRED)
+  INCLUDE(${ItkVtkGlue_USE_FILE})
+  SET(Glue ItkVtkGlue)
+ENDIF()
+ 
+ADD_EXECUTABLE(nifti-vtk main.cxx)
+TARGET_LINK_LIBRARIES(nifti-vtk
+  ${Glue} ${VTK_LIBRARIES} ${ITK_LIBRARIES})
+
+SET(CMAKE_CXX_FLAGS_RELEASE "-Wall -O2")
+SET(CMAKE_CXX_FLAGS_DEBUG  "-Wall -O0 -g")
