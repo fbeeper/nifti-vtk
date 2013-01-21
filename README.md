@@ -2,7 +2,9 @@ nifti-vtk
 =========
 
 This is a simple code I've gathered to load volumetric NIFTI data into VTK using
-ITK. Notice that it should load a bunch of [volume formats supported by
+ITK. 
+
+Notice that it should load a bunch of [volume formats supported by
 ITK](http://www.itk.org/Wiki/ITK/File_Formats) too.
 
 It is a minimal adaptation of code from
