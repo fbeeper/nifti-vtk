@@ -14,20 +14,22 @@ but it's handy in case you're wondering how to get there ;)
 Building 
 ========
 
-1. I've just built VTK and ITK from their git repositories:
+Just follow the instructions:
 
-	cd && mkdir VTK-ITK && cd VTK-ITK
+1. Build VTK and ITK from their git repositories.
 
-	git clone git://vtk.org/VTK.git && git clone git://vtk.org/VTKData.git 
-	git clone git://itk.org/ITK.git && git clone git://itk.org/ITKData.git
+		cd && mkdir VTK-ITK && cd VTK-ITK
+
+		git clone git://vtk.org/VTK.git && git clone git://vtk.org/VTKData.git
+		git clone git://itk.org/ITK.git && git clone git://itk.org/ITKData.git
 	
-2. Run respective CMAKEs. Just remember to configure ITK with Module\_ITKVtkGlue
-   = TRUE. ::exclamation::
+2. Run respective CMAKE configuration. Remember to set ITK with
+   **Module\_ITKVtkGlue = TRUE** :exclamation:
 
-3. Run respective ``make && make install`` 
+3. Run respective ```make && make install``` 
 
 4. After that, the following command should work :P 
 
-	cmake && make && ./nifti-vtk <Path_to_you_nifti_file>
+		cmake && make && ./nifti-vtk <Path_to_you_nifti_file>
 
 5. Enjoy!
